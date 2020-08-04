@@ -6,7 +6,7 @@ pool:
 
 variables:
   imageName: 'search-gui'
-  dockerRegistry: 'BraincourtDockerRegistry'
+  dockerRegistry: 'BraincourtAzureDockerRegistry'
 
 steps:
 - task: Docker@2
