@@ -1,8 +1,11 @@
 FROM node:14.7.0
 
-COPY . .
+WORKDIR /app
 
-RUN npm run build
-RUN npm install -g serve
-ENTRYPOINT ["serve", "-s", "build"]
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY . ./
+
+RUN npm install
+ENTRYPOINT ["npm", "start"]
 
