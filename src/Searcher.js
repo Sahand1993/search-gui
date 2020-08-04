@@ -11,8 +11,8 @@ class Searcher extends React.Component {
             defaultSearchResults: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.neuralSearchUri = 'http://localhost:5000/neuralSearch';
-        this.defaultSearchUri = 'http://localhost:5000/defaultConfluence';
+        this.neuralSearchUri = "https://neuralsearch.azurewebsites.net/neuralSearch"; // TODO: Get from environment variables instead
+        this.defaultSearchUri = "https://neuralsearch.azurewebsites.net/defaultConfluence";
         this.confluenceBaseUri = 'http://confluence.braincourt.net';
     }
    
