@@ -1,0 +1,29 @@
+trigger:
+- master
+
+pool:
+ vmImage: 'Ubuntu-16.04'
+
+variables:
+  imageName: 'search-gui'
+  dockerRegistry: 'BraincourtDockerRegistry'
+
+steps:
+- task: Docker@2
+  displayName: Build SearchGUI Docker Image
+  inputs:
+    containerRegistry: $(dockerRegistry)
+    repository: $(imageName)
+    tags: |
+      1.0
+    command: build
+    Dockerfile: Dockerfile
+
+- task: Docker@2
+  displayName: Push SearchGUI Docker Image
+  inputs:
+    containerRegistry: $(dockerRegistry)
+    repository: $(imageName)
+    tags: |
+      1.0
+    command: push
