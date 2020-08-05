@@ -14,7 +14,7 @@ class SearchResults extends React.Component {
                 </Column>
                 <Column vertical='center'>
                     <Column horizontal='center' vertical='start'>
-                        {this.props.neuralSearchResults.map((result) => (<a href={this.props.confluenceBaseUri + result.webUi}><div key={result.key}>{result.title}</div></a>))}
+                        {this.props.neuralSearchResults.map((result) => (<a href={this.props.confluenceBaseUri + result.webUi} onClick={() => this.props.documentClickHandler(result.id, result.title, this.props.confluenceBaseUri + result.webUi)} key={result.key}>{result.title}</a>))}
                     </Column>
                 </Column>
             </Column>
@@ -24,7 +24,7 @@ class SearchResults extends React.Component {
                 </Column>
                 <Column vertical='center'>
                     <Column horizontal='center' vertical='start'>
-                        {this.props.defaultSearchResults.map((result) => (<a href={this.props.confluenceBaseUri + result.webUi}><div key={result.key}>{result.title}</div></a>))}
+                        {this.props.defaultSearchResults.map((result) => (<a href={this.props.confluenceBaseUri + result.webUi} onClick={() => this.props.documentClickHandler(result.id, result.title, this.props.confluenceBaseUri + result.webUi)} key={result.key}>{result.title}</a>))}
                     </Column>
                 </Column>
             </Column>
